@@ -1,3 +1,5 @@
+![Thumbnail GitHub](./thumb.png)
+
 # 📱 Client Control - Testes de Integração
 
 ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
@@ -10,6 +12,8 @@ Projeto desenvolvido durante o curso **"Flutter: implementando testes de integra
 ## 📋 Sobre o Projeto
 
 Client Control é uma aplicação de gerenciamento de clientes que permite cadastrar clientes, tipos de clientes e vincular os tipos aos clientes cadastrados. O foco principal deste projeto é a implementação de **testes de integração** para validar fluxos completos da aplicação.
+
+![Screenshot do App](./screenshot.png)
 
 ## ✨ Funcionalidades
 
