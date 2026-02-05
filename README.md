@@ -29,9 +29,27 @@ Client Control é uma aplicação de gerenciamento de clientes que permite cadas
 O projeto implementa testes de integração que validam:
 
 - ✅ Navegação entre páginas
-- ✅ Interação com widgets (botões, menus)
+- ✅ Interação com widgets (botões, menus, diálogos)
 - ✅ Fluxos completos de usuário
 - ✅ Comportamentos esperados da aplicação
+- ✅ Criação de novos tipos de clientes
+- ✅ Seleção de ícones personalizados
+- ✅ Validação de dados após operações CRUD
+
+### Cenários de Teste Implementados
+
+O teste de integração completo (`app_test.dart`) valida o seguinte fluxo:
+
+1. **Inicialização**: Verifica se a página de clientes é carregada corretamente
+2. **Menu de Navegação**: Testa a abertura do menu hambúrguer e suas opções
+3. **Navegação para Tipos**: Acessa a página de tipos de clientes
+4. **Validação de Tipos Padrão**: Verifica a presença de tipos pré-cadastrados (Platinum, Golden, Titanium, Diamond)
+5. **Criação de Novo Tipo**: 
+   - Abre o diálogo de criação
+   - Insere o nome "Ferro"
+   - Seleciona um ícone personalizado (card_giftcard)
+   - Salva o novo tipo
+6. **Validação de Persistência**: Confirma que o novo tipo foi criado e está visível na lista
 
 ### Executar Testes de Integração
 
@@ -99,6 +117,11 @@ Durante o desenvolvimento deste projeto, foram aplicados os seguintes conceitos:
 - 🎭 Uso do `IntegrationTestWidgetsFlutterBinding`
 - 🧩 Testes de interação com widgets
 - 📊 Validação de fluxos completos da aplicação
+- 🔎 Uso de `Finders` para localizar widgets (byType, byIcon, byText)
+- ⏱️ Sincronização com `pumpAndSettle()` para aguardar animações
+- 📝 Testes de formulários e entrada de texto
+- 🎯 Validação de criação e persistência de dados
+- 🎨 Testes de seleção de ícones e interação com diálogos
 
 ### Gerenciamento de Estados
 - 🔄 `Provider` como gerenciador de estados
