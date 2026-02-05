@@ -8,10 +8,46 @@ void main(){
   testWidgets('Integration Test', (tester) async{
       app.main();
       await tester.pumpAndSettle();
-      expect(find.text('Menu'), findsNothing);
+      expect(find.text('Clientes'), findsOneWidget);
+      expect(find.byIcon(Icons.menu), findsOneWidget);
+      expect(find.byType(FloatingActionButton), findsOneWidget);
+
 
       await tester.tap(find.byIcon(Icons.menu));
       await tester.pumpAndSettle();
+
       expect(find.text('Menu'), findsOneWidget);
+      expect(find.text('Gerenciar clientes'), findsOneWidget);
+      expect(find.text('Tipos de clientes'), findsOneWidget);
+      expect(find.text('Sair'), findsOneWidget);
+
+      await tester.tap(find.text('Tipos de clientes'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Tipos de cliente'), findsOneWidget);
+      expect(find.byType(FloatingActionButton), findsOneWidget);
+      expect(find.byIcon(Icons.menu), findsOneWidget);
+      expect(find.text('Platinum'), findsOneWidget);
+      expect(find.text('Golden'), findsOneWidget);
+      expect(find.text('Titanium'), findsOneWidget);
+      expect(find.text('Diamond'), findsOneWidget);
+
+      await tester.tap(find.byType(FloatingActionButton));
+      await tester.pumpAndSettle();
+      expect(find.byType(AlertDialog), findsOneWidget);
+      await tester.enterText(find.byType(TextFormField), 'Ferro');
+
+      await tester.tap(find.text('Selecionar icone'));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byIcon(Icons.card_giftcard));
+      await tester.pumpAndSettle();
+      
+      await tester.tap(find.text('Salvar'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Ferro'), findsOneWidget);
+      expect(find.byIcon(Icons.card_giftcard), findsOneWidget);
+
   });
 }
