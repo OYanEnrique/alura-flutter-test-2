@@ -35,10 +35,14 @@ O projeto implementa testes de integração que validam:
 - ✅ Criação de novos tipos de clientes
 - ✅ Seleção de ícones personalizados
 - ✅ Validação de dados após operações CRUD
+- ✅ Criação e exclusão de clientes (Dismissible)
+- ✅ Verificação do funcionamento do botão Sair no Drawer
 
 ### Cenários de Teste Implementados
 
-O teste de integração completo (`app_test.dart`) valida o seguinte fluxo:
+#### Teste de Integração (`integration_test/app_test.dart`)
+
+O teste de integração completo valida o seguinte fluxo:
 
 1. **Inicialização**: Verifica se a página de clientes é carregada corretamente
 2. **Menu de Navegação**: Testa a abertura do menu hambúrguer e suas opções
@@ -49,12 +53,42 @@ O teste de integração completo (`app_test.dart`) valida o seguinte fluxo:
    - Insere o nome "Ferro"
    - Seleciona um ícone personalizado (card_giftcard)
    - Salva o novo tipo
-6. **Validação de Persistência**: Confirma que o novo tipo foi criado e está visível na lista
+6. **Validação de Persistência do Tipo**: Confirma que o novo tipo foi criado e está visível na lista
+7. **Criação de Novo Cliente**:
+   - Navega para a página de gerenciar clientes
+   - Adiciona um cliente "DandaraBot" com email e tipo "Ferro"
+   - Valida a criação do cliente
+8. **Exclusão de Cliente**:
+   - Executa swipe gesture (Dismissible) para deletar o cliente
+   - Confirma que o cliente foi removido da interface
 
-### Executar Testes de Integração
+#### Testes de Widget (`test/widget_test.dart`)
 
+##### Testes do Menu Hambúrguer
+- ✅ Verificação de todos os itens do menu (Menu, Gerenciar clientes, Tipos de clientes, Sair)
+- ✅ Teste específico do botão "Sair" no Drawer que finaliza o aplicativo
+
+##### Testes do Icon Picker
+- ✅ Abertura do diálogo de seleção de ícones
+- ✅ Exibição de múltiplos ícones no GridView
+- ✅ Seleção de ícone específico e retorno do valor
+- ✅ Funcionalidade do botão "Fechar"
+
+### Executar Testes
+
+**Testes de Integração:**
 ```bash
 flutter test integration_test/app_test.dart
+```
+
+**Testes de Widget:**
+```bash
+flutter test test/widget_test.dart
+```
+
+**Todos os Testes:**
+```bash
+flutter test
 ```
 
 ## 🛠️ Tecnologias Utilizadas
@@ -122,6 +156,14 @@ Durante o desenvolvimento deste projeto, foram aplicados os seguintes conceitos:
 - 📝 Testes de formulários e entrada de texto
 - 🎯 Validação de criação e persistência de dados
 - 🎨 Testes de seleção de ícones e interação com diálogos
+- 🗑️ Testes de gestures (Dismissible) para exclusão de itens
+
+### Testes de Widget
+- 🔬 Criação de testes de widget isolados
+- 🎯 Testes de componentes específicos (Icon Picker, Menu)
+- ✅ Validação de comportamento de UI components
+- 🧪 Testes de diálogos e interações assíncronas
+- 📱 Mock de contextos e builders para testes
 
 ### Gerenciamento de Estados
 - 🔄 `Provider` como gerenciador de estados
