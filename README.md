@@ -157,6 +157,7 @@ Durante o desenvolvimento deste projeto, foram aplicados os seguintes conceitos:
 - 🎯 Validação de criação e persistência de dados
 - 🎨 Testes de seleção de ícones e interação com diálogos
 - 🗑️ Testes de gestures (Dismissible) para exclusão de itens
+- 🔧 Refatoração para named parameters para melhor testabilidade
 
 ### Testes de Widget
 - 🔬 Criação de testes de widget isolados
@@ -178,6 +179,8 @@ Durante o desenvolvimento deste projeto, foram aplicados os seguintes conceitos:
 - 🧱 Separação de responsabilidades (Models, Pages, Components)
 - 🎨 Componentização de widgets
 - ✅ Testes automatizados
+- 🔧 Uso de named parameters para maior flexibilidade e legibilidade
+- 🎯 Injeção de dependências via Provider para facilitar testes
 
 ## 📁 Estrutura do Projeto
 
